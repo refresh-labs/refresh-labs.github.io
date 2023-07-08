@@ -1,3 +1,6 @@
+* {
+  font-family: 'Roboto Mono', monospace;
+}
 .centre-content {
     display: flex;
     justify-content: center;
@@ -29,7 +32,7 @@
 
 .glow-on-hover:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #9DFE78, #78FFC0, #7CFC00, #3CB371, #006400);
   position: absolute;
   top: -2px;
   left:-2px;
@@ -49,7 +52,8 @@
 }
 
 .glow-on-hover:active:after {
-  background: transparent;
+  /* background: transparent; */
+  color: white;
 }
 
 .glow-on-hover:hover:before {
