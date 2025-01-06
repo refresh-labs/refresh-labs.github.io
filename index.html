@@ -1,39 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="description" content="Refresh Labs" />
-		<meta name="twitter:card" content="Refresh Labs" />
-		<meta name="twitter:site" content="@disconnectfi" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-			referrerpolicy="no-referrer"
-		/>
-		<script src="./script.js"></script>
-		<link rel="stylesheet" type="text/css" href="main.css" />
-		<link rel="canonical" href="https://refreshlabs.xyz" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Labs</title>
 
-		<title>Refresh Labs</title>
-	</head>
+    <!-- Favicon tags -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frefreshlabs.xyz&size=180">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frefreshlabs.xyz&size=32">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frefreshlabs.xyz&size=16">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frefreshlabs.xyz&size=180" color="#5bbad5">
+    <link rel="shortcut icon" href="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frefreshlabs.xyz&size=16">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://refreshlabs.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Refresh Labs">
+    <meta property="og:description" content="Building the future of decentralized finance with innovative solutions">
+    <meta property="og:image" content="https://framerusercontent.com/images/tYQA4Qx1YR7mDObcZJgn82sCI.png">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="refreshlabs.xyz">
+    <meta property="twitter:url" content="https://refreshlabs.xyz">
+    <meta name="twitter:title" content="Refresh Labs">
+    <meta name="twitter:description" content="Building the future of decentralized finance with innovative solutions">
+    <meta name="twitter:image" content="https://framerusercontent.com/images/tYQA4Qx1YR7mDObcZJgn82sCI.png">
+    
+    <style>
+      body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+      iframe { width: 100%; height: 100%; border: none; }
+    </style>
+    
+      <script>
+        function injectFramerBadgeRemoval() {
+          var iframe = document.querySelector('iframe');
+          if (iframe) {
+            iframe.onload = function() {
+              var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+              var style = iframeDoc.createElement('style');
+              style.textContent = '.__framer-badge { display: none !important; }';
+              iframeDoc.head.appendChild(style);
 
-	<body class="centre-content">
-		<div>
-			<h1
-				id="title"
-				class="text-white text-4xl md:text-8xl font-extrabold"
-			>
-				Refresh Labs
-			</h1>
-			<p class="font-light text-white flex w-full justify-center items-center mt-2 text-md">
-				Coming soon.
-			</p>
-			<a class="w-48 flex w-full justify-center items-center mt-12" href="mailto:hi@refreshlabs.xyz">
-				<button class="glow-on-hover"  type="button">Reach out to us</button>
-			</a>
-		</div>
-	</body>
+              var script = iframeDoc.createElement('script');
+              script.textContent = `
+                (function() {
+                  function removeBadge() {
+                    var badge = document.querySelector('.__framer-badge');
+                    if (badge) {
+                      badge.remove();
+                    }
+                    var container = document.getElementById('__framer-badge-container');
+                    if (container) {
+                      container.remove();
+                    }
+                    requestAnimationFrame(removeBadge);
+                  }
+                  removeBadge();
+
+                  var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      if (mutation.addedNodes.length) {
+                        removeBadge();
+                      }
+                    });
+                  });
+
+                  observer.observe(document.body, { childList: true, subtree: true });
+                })();
+              `;
+              iframeDoc.body.appendChild(script);
+            };
+          }
+        }
+        injectFramerBadgeRemoval();
+      </script>
+    
+  </head>
+  <body>
+    <iframe src="https://refreshlabs.framer.website/"></iframe>
+  </body>
 </html>
